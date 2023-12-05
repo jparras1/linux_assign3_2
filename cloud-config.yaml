@@ -18,3 +18,13 @@ runcmd:
   - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
   - systemctl restart ssh
   - systemctl restart systemd-journald
+  - sudo apt update
+  - sudo apt upgrade
+  - sudo apt install nginx
+  - sudo apt install ufw
+  - sudo ufw default deny incoming
+  - sudo ufw default allow outgoing
+  - sudo ufw allow ssh
+  - sudo ufw allow http
+  - sudo ufw enable
+
